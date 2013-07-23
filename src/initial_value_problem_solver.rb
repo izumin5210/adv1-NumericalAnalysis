@@ -21,7 +21,7 @@ class InitialValueProblemSolver
   def step
     @t += @h
     @x = @method.call(@dx, @t, @x, @h)
-    puts "t=#{t}, #{@x.inspect}"
+    # puts "t=#{t}, #{@x.inspect}"
     [@t.to_f, @x]
   end
 
