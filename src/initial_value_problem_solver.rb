@@ -8,7 +8,7 @@ class InitialValueProblemSolver
   attr_accessor :method, :h
 
   def initialize(t0, tn, h, x0, dx, method)
-    @t0, @tn, @h, @x0 = t0.to_d, tn.to_d, h.to_d, x0.to_d
+    @t0, @tn, @h, @x0 = t0.to_d, tn.to_d, h.to_d, x0
     @dx = dx
     @method = method
     reset
@@ -21,7 +21,8 @@ class InitialValueProblemSolver
   def step
     @t += @h
     @x = @method.call(@dx, @t, @x, @h)
-    [@t.to_f, @x.to_f]
+    puts "t=#{t}, #{@x.inspect}"
+    [@t.to_f, @x]
   end
 
   def finish?

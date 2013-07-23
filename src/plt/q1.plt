@@ -7,6 +7,8 @@ out = "img/"
 src = "data/q1/"
 
 set output out."q1-1.eps"
+set xlabel "t"
+set ylabel "x"
 
 plot [0:10][:] src."ans.csv" using 1:2 with linespoints title "ans",\
      src."euler.csv" using 1:2 with linespoints title "euler",\
@@ -16,6 +18,8 @@ plot [0:10][:] src."ans.csv" using 1:2 with linespoints title "ans",\
 set logscale
 file = src."error.csv"
 set output out."q1-2.eps"
+set xlabel "h"
+set ylabel "error"
 
 plot file using 1:2 with linespoints title "euler",\
      file using 1:3 with linespoints title "heun",\

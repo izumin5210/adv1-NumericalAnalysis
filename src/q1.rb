@@ -35,7 +35,7 @@ x = lambda { |t| 2*Math::E**(2*Math.sin(t)) / (1 + Math::E**(2*Math.sin(t))) }
 solver = InitialValueProblemSolver.new(t0, tn, h, x0, dx, EULER)
 
 CSV.open(DATA_DIR+ANS_FILE, 'w') do |csv|
-  (t0..tn).step(h) { |xi| csv << [xi, x.call(xi)] }
+  (t0..tn).step(h) { |ti| csv << [ti, x.call(ti)] }
 end
 
 write(EULER_FILE, solver, EULER)
