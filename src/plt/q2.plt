@@ -25,3 +25,9 @@ set zlabel "z"
 
 set output out."q2-xyz.eps"
 splot src."result.csv" using 2:3:4 with lines
+
+set xlabel "z_{n}"
+set ylabel "z_{n+1}"
+
+set output out."q2-lorenz_map.eps"
+plot src."z_max.csv" using 1:2 with points

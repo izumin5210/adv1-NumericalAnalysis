@@ -1,0 +1,120 @@
+% ================================================================
+%   usepackage
+% ================================================================
+
+% use Times font
+%\usepackage{txfonts}
+
+\usepackage[dvips,dvipdfmx]{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{enumerate}
+\usepackage{url}
+\usepackage{multirow}
+
+% ================================================================
+%   caption
+% ================================================================
+
+\renewcommand{\figurename}{Fig.}
+\renewcommand{\tablename}{Table }
+
+% caption => gothic
+\makeatletter
+\long\def\@makecaption#1#2{{\gt
+  \advance\leftskip .0628\linewidth
+  \advance\rightskip .0628\linewidth
+  \vskip\abovecaptionskip
+  \sbox\@tempboxa{#1\hskip1zw\relax #2}%
+  \ifdim \wd\@tempboxa <\hsize \centering \fi
+  #1\hskip1zw\relax #2\par
+  \vskip\belowcaptionskip}}
+\makeatother
+
+% ================================================================
+%   words
+% ================================================================
+
+\newcommand{\anct}{Akashi National College of Technology}
+\newcommand{\anctj}{明石工業高等専門学校}
+\newcommand{\wed}{Weighted Euclidean Distance}
+\newcommand{\ad}{Array Disorder}
+\newcommand{\add}{WED+AD}
+\newcommand{\RA}{Recognition Accuracy }
+\newcommand{\Ra}{Recognition accuracy }
+\newcommand{\ra}{recognition accuracy }
+\newcommand{\FAR}{False Acceptance Rate }
+\newcommand{\Far}{False acceptance rate }
+\newcommand{\far}{false acceptance rate }
+\newcommand{\FRR}{False Rejection Rate }
+\newcommand{\Frr}{False rejection rate }
+\newcommand{\frr}{false rejection rate }
+
+\newcommand{\fref}[1]{Fig.\ref{fig:#1}}
+\newcommand{\eref}[1]{式(\ref{eq:#1})}
+\newcommand{\tref}[1]{Table \ref{table:#1}}
+\newcommand{\unit}[1]{~[#1]}
+
+% ================================================================
+%   table
+% ================================================================
+
+\newcommand{\tbl}[3]{
+    \begin{table}[htbp]
+        \centering
+        \caption{#1}
+        \label{table:#2}
+        #3
+    \end{table}
+}
+
+% ================================================================
+%   figure
+% ================================================================
+
+\newcommand{\fig}[3]{
+    \begin{figure}[htbp]
+        \centering
+        #1
+        \caption{#2}
+        \label{fig:#3}
+    \end{figure}
+}
+
+% ================================================================
+%   equation
+% ================================================================
+
+\newcommand{\eqn}[1]{
+    \begin{equation}
+        #1 
+    \end{equation}
+}
+
+\newcommand{\dd}[2]{\frac{\mathrm{d}#1}{\mathrm{d}#2}}
+
+% ================================================================
+%   list
+% ================================================================
+
+\newcommand{\ul}[1]{
+    \begin{itemize}
+        #1
+    \end{itemize}
+}
+
+\newcommand{\ol}[1]{
+    \begin{enumerate}
+        #1
+    \end{enumerate}
+}
+
+\newcommand{\dl}[1]{
+    \begin{description}
+        #1
+    \end{description}
+}
+
+\newcommand{\li}{\item}
