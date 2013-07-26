@@ -19,8 +19,8 @@ class InitialValueProblemSolver
   end
 
   def step
-    @t += @h
     @x = @method.call(@dx, @t, @x, @h)
+    @t += @h
     # puts "t=#{t}, #{@x.inspect}"
     [@t.to_f, @x]
   end
