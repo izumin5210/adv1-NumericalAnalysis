@@ -31,12 +31,14 @@ z, z_max = Array.new, Array.new
 
 CSV.open(DATA_DIR+RESULT_FILE, 'w') do |csv|
   until solver.finish?
+    print "%07.3f%% \r" % [solver.t.to_f/tn*100]
     x = solver.step
     csv << [x[0], x[1][0], x[1][1], x[1][2]]
     z.push x[1][2]
   end
 end
 
+print "\n"
 
 (z.size-2).times { |i| z_max.push z[i+1] if z[i] < z[i+1] and z[i+2] < z[i+1]}
 
