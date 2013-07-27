@@ -11,11 +11,10 @@ set output out."q3-tf.eps"
 set xlabel "t"
 set ylabel "f(t)"
 
-plot [0:25][-1:1] src."tf.csv" using 1:2 with lines,\
-#    src."tf.csv" using 1:3 with points
+plot [0:1024][:] src."tf.csv" using 1:2 with lines,\
 
 set output out."q3-ps.eps"
 set xlabel "k"
 set ylabel "power spectrum"
 
-plot src."ps.csv" using 1:2 with lines
+plot [0:1024][:] src."ps.csv" using 1:2 with lines
