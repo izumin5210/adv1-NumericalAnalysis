@@ -6,7 +6,8 @@
     language={Ruby},
     frame=shadowbox,
     numbers=left,
-    basicstyle={\small}
+    basicstyle={\small},
+    breaklines=true
 }
 
 \begin{document}
@@ -60,9 +61,13 @@
     \begin{cases}
         \frac{1}{2} (\cos \omega t)^3 & (0 \leq x \leq 2L) \\
         0 & (t < 0,~ t > 2L)
-    \end{cases}
+    \end{cases} \label{eq:q3}
 }
 \eqn{\omega = 5.026548,~ L = 25}
+
 \lstinputlisting[label=src:q3, caption=q3.rb]{src/q3.rb}
+
+\fig{\includegraphics[width=120mm]{img/q3-tf.eps}}{\eref{q3}と一様乱数の重ねあわせ}{q3-tf}
+\fig{\includegraphics[width=120mm]{img/q3-ps.eps}}{パワースペクトル図}{q3-tf}
 
 \end{document}
