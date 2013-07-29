@@ -3,8 +3,6 @@
 EULER = lambda { |dx, t, x, h| x + h * dx.call(t, x) }
 
 HEUN = lambda do |dx, t, x, h|
-  # k = EULER.call(dx, t, x, h)
-  # x + h/2 * (dx.call(t, x) + dx.call(t+h, k))
   k1 = h * dx.call(t, x)
   k2 = h * dx.call(t+h/2, x+k1/2)
   x + k2
